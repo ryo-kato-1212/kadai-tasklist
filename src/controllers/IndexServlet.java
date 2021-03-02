@@ -37,7 +37,7 @@ public class IndexServlet extends HttpServlet {
         List<kadai> tasks = em.createNamedQuery("getAllTasks", kadai.class).getResultList();
         em.close();
 
-        request.setAttribute("task", tasks);
+        request.setAttribute("tasks", tasks);
 
         RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/tasks/index.jsp");
         rd.forward(request, response);
